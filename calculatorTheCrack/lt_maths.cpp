@@ -48,12 +48,7 @@ vector<int> calcNumberLength(int y)
 		units = units + 1;
 	}
 
-//	// Split the number into an array
-//    static int *number;
-//    number = new int[units+1]; // allocate memory for array of size 'units' + 1
-//    number[0] = units; // Length of number
-
-    // Use vector instead
+    // Use vector auto memory allocation management
     vector<int> number;
     number.push_back(units); // number[0] = units
     int expo = units - 1;
@@ -74,16 +69,16 @@ vector<int> calcNumberLength(int y)
 int c_shiftL(int y)
 {
 	// Return array of split y
-    //int * nArr;
     vector<int> nArr;
     nArr = calcNumberLength(y);
-    cout << "&nArr: " << &nArr << endl;
 
 	// Shift values in the array
 	int len = nArr[0];
     int maxVal = nArr[1];
+    
 	// Create output array of correct size
 	int outArray[len];
+    vector<int> outArray;
     
 	for (int i=0;i<len-1;i++){
         outArray[i] = nArr[i+2] * pow(10,((len-1)-i));
@@ -95,10 +90,6 @@ int c_shiftL(int y)
     for (int i=0;i<len;i++){
         sum += outArray[i];
     }
-
-    // Free memory used for number array
     
-
-
    return sum;
 }
