@@ -20,5 +20,6 @@ int c_divide(int, int);
 //int * calcNumberLength(int);
 std::vector<int> calcNumberLength(int);
 int c_shiftL(int);
+int c_shiftR(int);
 
 #endif /* lt_maths_hpp */

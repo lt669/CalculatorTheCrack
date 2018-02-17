@@ -77,13 +77,13 @@ int c_shiftL(int y)
     int maxVal = nArr[1];
     
 	// Create output array of correct size
-	int outArray[len];
     vector<int> outArray;
     
 	for (int i=0;i<len-1;i++){
-        outArray[i] = nArr[i+2] * pow(10,((len-1)-i));
+        outArray.push_back(nArr[i+2] * pow(10,((len-1)-i)));
 	}
-    outArray[len-1] = maxVal;
+    //outArray[len-1] = maxVal;
+    outArray.insert(outArray.begin()+len-1, maxVal);
     
     int sum = 0;
     // Sum all elements in the array
@@ -93,3 +93,21 @@ int c_shiftL(int y)
     
    return sum;
 }
+
+int shiftR(int y){
+    
+    // Return array of split y
+    vector<int> nArr;
+    nArr = calcNumberLength(y);
+    
+    // Shift values in the array
+    int len = nArr[0];
+    int minVal = nArr[len];
+    
+    // Create output array of correct size
+    vector<int> outArray;
+    
+    // Add shifting loop here
+    
+}
+
