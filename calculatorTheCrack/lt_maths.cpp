@@ -32,8 +32,14 @@ int c_divide(int x, int y)
     return y / x;
 }
 
+int c_inverse(int y)
+{
+    return y * -1;
+}
+
 vector<int> calcNumberLength(int y)
 {
+
 	/* number[0] = length of number */
 	int z = 1;
 	int x = y;
@@ -60,14 +66,22 @@ vector<int> calcNumberLength(int y)
 			tempNumber = tempNumber - (number.at(k) * pow(10,expo-(k-1)));
 		}
 	}
-    
-    //cout << "&number: " << &number << endl;
-    
+
     return number;
 }
 
 int c_shiftL(int y)
 {
+    // Determine sign of the input number
+    bool positive;
+    
+    if (y < 0){
+        positive = false;
+        y = y * -1;
+    } else {
+        positive = true;
+    }
+    
 	// Return array of split y
     vector<int> nArr;
     nArr = calcNumberLength(y);
@@ -75,6 +89,9 @@ int c_shiftL(int y)
 	// Shift values in the array
 	int len = nArr[0];
     int maxVal = nArr[1];
+    
+    // Determine sign of number
+    
     
 	// Create output array of correct size
     vector<int> outArray;
@@ -91,10 +108,25 @@ int c_shiftL(int y)
         sum += outArray[i];
     }
     
+    // Correct sign if required
+    if(positive == false){
+        sum = sum * -1;
+    }
+    
    return sum;
 }
 
 int c_shiftR(int y){
+    
+    // Determine sign of the input number
+    bool positive;
+    
+    if (y < 0){
+        positive = false;
+        y = y * -1;
+    } else {
+        positive = true;
+    }
     
     // Return array of split y
     vector<int> nArr;
@@ -118,6 +150,11 @@ int c_shiftR(int y){
     // Sum all elements in the array
     for (int i=0;i<len;i++){
         sum += outArray[i];
+    }
+    
+    // Correct sign if required
+    if(positive == false){
+        sum = sum * -1;
     }
     
     return sum;

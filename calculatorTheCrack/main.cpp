@@ -14,7 +14,7 @@ using namespace std;
 int main(int argc, const char * argv[])
 {
 
-    int testVal = 56789;
+    int testVal = -56789;
     // Test shifting sub-functions
     //int *e;
     vector<int> e;
@@ -28,6 +28,8 @@ int main(int argc, const char * argv[])
     total = c_shiftR(testVal);
     cout << "Answer Right: " << total<< endl;
     
+    total = c_inverse(testVal);
+    cout << "Answer inverse: " << total<< endl;
     
     
     // Playing with pointers
