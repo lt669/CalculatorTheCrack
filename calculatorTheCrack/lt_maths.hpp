@@ -23,5 +23,6 @@ int c_shiftL(int);
 int c_shiftR(int);
 int c_inverse(int);
 int c_pow(int,int);
+int c_replace(int,int,int);
 
 #endif /* lt_maths_hpp */

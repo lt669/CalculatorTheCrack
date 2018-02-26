@@ -36,6 +36,51 @@ int c_pow(int x, int y){
     return pow(y,x);
 }
 
+int c_replace(int x, int z, int y){
+    // Replace any number in y that is x with z
+    
+    
+    // Determine sign of the input number
+    bool positive;
+    
+    if (y < 0){
+        positive = false;
+        y = y * -1;
+    } else {
+        positive = true;
+    }
+    
+    // Split input into an array
+    vector<int> nArr;
+    nArr = calcNumberLength(y);
+    int len = nArr[0];
+    // Create output vector
+    vector<int> outArray(len);
+    
+    // Scan through array, look for matching numbers and replace
+    for(int i=1;i<len+1;i++){
+        if(nArr[i] == x){
+            outArray[i-1] = z;
+        } else {
+            outArray[i-1] = nArr[i];
+        }
+    }
+    
+    // Sum array to create output number
+    int sum = 0;
+    // Sum all elements in the array
+    for (int i=0;i<len;i++){
+        sum += outArray[i] * pow(10,(len-1)-i);
+    }
+    
+    // Correct sign if required
+    if(positive == false){
+        sum = sum * -1;
+    }
+    
+    
+    return sum;
+}
 
 
 vector<int> calcNumberLength(int y)

@@ -14,7 +14,7 @@ using namespace std;
 int main(int argc, const char * argv[])
 {
 
-    int testVal = -56789;
+    int testVal = -234432;
     // Test shifting sub-functions
     //int *e;
     vector<int> e;
@@ -33,6 +33,9 @@ int main(int argc, const char * argv[])
     
     total = c_pow(2,-5);
     cout << "Answer Power: " << total<< endl;
+    
+    total = c_replace(44,7,testVal);
+    cout << "Answer replace: " << total<< endl;
     
     
     
