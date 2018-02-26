@@ -94,7 +94,7 @@ int c_shiftL(int y)
    return sum;
 }
 
-int shiftR(int y){
+int c_shiftR(int y){
     
     // Return array of split y
     vector<int> nArr;
@@ -105,9 +105,21 @@ int shiftR(int y){
     int minVal = nArr[len];
     
     // Create output array of correct size
-    vector<int> outArray;
+    vector<int> outArray(len);
     
-    // Add shifting loop here
+    // Shifting loop
+    for(int i=len-1;i>0;i--){
+        outArray[i] = nArr[i] * (pow(10,((len-1)-i)));
+    }
+    // Wrap min value around to max value
+    outArray[0] = minVal * pow(10,len-1);
     
+    int sum = 0;
+    // Sum all elements in the array
+    for (int i=0;i<len;i++){
+        sum += outArray[i];
+    }
+    
+    return sum;
 }
 

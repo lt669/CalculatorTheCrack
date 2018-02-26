@@ -23,7 +23,10 @@ int main(int argc, const char * argv[])
     cout << "pointer: " << e[0]<< endl;
     
     int total = c_shiftL(testVal);
-    cout << "Answer: " << total<< endl;
+    cout << "Answer Left: " << total<< endl;
+    
+    total = c_shiftR(testVal);
+    cout << "Answer Right: " << total<< endl;
     
     
     
