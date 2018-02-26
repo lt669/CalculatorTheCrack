@@ -31,6 +31,10 @@ int main(int argc, const char * argv[])
     total = c_inverse(testVal);
     cout << "Answer inverse: " << total<< endl;
     
+    total = c_pow(2,-5);
+    cout << "Answer Power: " << total<< endl;
+    
+    
     
     // Playing with pointers
     

@@ -12,30 +12,31 @@
 #include <vector>
 using namespace std;
 
-int c_plus(int x, int y)
-{
+int c_plus(int x, int y){
     return y + x;
 }
 
-int c_minus(int x, int y)
-{
+int c_minus(int x, int y){
     return y - x;
 }
 
-int c_times(int x, int y)
-{
+int c_times(int x, int y){
     return y * x;
 }
 
-int c_divide(int x, int y)
-{
+int c_divide(int x, int y){
     return y / x;
 }
 
-int c_inverse(int y)
-{
+int c_inverse(int y){
     return y * -1;
 }
+
+int c_pow(int x, int y){
+    return pow(y,x);
+}
+
+
 
 vector<int> calcNumberLength(int y)
 {
