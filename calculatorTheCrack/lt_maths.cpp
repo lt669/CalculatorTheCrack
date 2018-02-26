@@ -37,8 +37,7 @@ int c_pow(int x, int y){
 }
 
 int c_replace(int x, int z, int y){
-    // Replace any number in y that is x with z
-    
+    // Replace numbers x in y with z
     
     // Determine sign of the input number
     bool positive;
@@ -49,6 +48,9 @@ int c_replace(int x, int z, int y){
     } else {
         positive = true;
     }
+    
+    // Determine size of number to replace
+    vector<int> nZ = calcNumberLength(z);
     
     // Split input into an array
     vector<int> nArr;
